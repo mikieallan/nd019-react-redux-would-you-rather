@@ -45,7 +45,7 @@ class QuestionDetails extends Component {
 		const { question, questionAuthorId, userAnswer, optionOnePerc, optionTwoPerc, optionOneVotes,optionTwoVotes } = this.props
 		const { selection, redirect } = this.state
 
-		if (this.state.redirect) {
+		if (redirect) {
 			return <Redirect to='/' />
 		}
 		console.log(selection)

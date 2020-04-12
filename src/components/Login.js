@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap'
-import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 	constructor(props) {
