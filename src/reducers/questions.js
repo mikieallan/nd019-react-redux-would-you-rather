@@ -1,5 +1,4 @@
 import { RECEIVE_QUESTIONS, ADD_QUESTION, ANSWER_QUESTION, REMOVE_QUESTION_ANSWER } from '../actions/questions'
-import { omit } from 'lodash'
 
 export default function users (state = {}, action) {
 	switch(action.type) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Container, Button, Card, CardBody, CardHeader, Form, FormGroup, Label, Input, FormText, Row, Col } from 'reactstrap'
+import { Container, Button, Card, CardBody, CardHeader, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap'
 import { handleAddQuestion } from '../actions/shared'
 import { Redirect } from 'react-router-dom'
 

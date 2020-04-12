@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 	constructor(props) {
@@ -28,20 +29,9 @@ class Login extends Component {
 		}
 	}
 
-	/*handleBypassAuth() {
-		const fixed_User = "sarahedo"
-		const { authenticate } = this.props
-
-		this.setState({user_id: fixed_User})
-		authenticate(fixed_User)
-	}*/
-
 	render () {
 		const { users } = this.props
 		const { userId } = this.state 
-
-		/*const bypassAuth = true*/
-		
 		
 		return(
 			<Row>
@@ -67,7 +57,6 @@ class Login extends Component {
 						</FormGroup>
 						<Button disabled={userId === ''}>Submit </Button>
 					</Form>
-					{/* bypassAuth && this.handleBypassAuth() */}
 				</Col>
 			</Row>
 		)

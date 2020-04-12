@@ -42,7 +42,7 @@ class QuestionDetails extends Component {
 	}
 
 	render () {
-		const { question, questionAuthorId, userAnswer, optionOnePerc, optionTwoPerc } = this.props
+		const { question, questionAuthorId, userAnswer, optionOnePerc, optionTwoPerc, optionOneVotes,optionTwoVotes } = this.props
 		const { selection, redirect } = this.state
 
 		if (this.state.redirect) {
@@ -111,10 +111,20 @@ class QuestionDetails extends Component {
 						<CardFooter>
 						{ userAnswer ? 
 							userAnswer === 'optionOne' ?
-							<div className="text-center">{'Option One: ' + optionOnePerc + '% of votes'}
+							<div className="text-center">
+								{ optionOneVotes === 1 ? 
+									<p>{optionOneVotes + ' person voted for Option 1'}</p> :
+									<p>{optionOneVotes + ' people voted for Option 1'}</p>
+								}
+								<p>{'This is ' + optionOnePerc + '% of votes'}</p>
 								<Progress value={optionOnePerc} color="info"/>
 							</div> :
-							<div className="text-center">{'Option Two: ' + optionTwoPerc + '% of votes'}
+							<div className="text-center">
+								{ optionTwoVotes === 1 ? 
+									<p>{optionTwoVotes + ' person voted for Option 2'}</p> :
+									<p>{optionTwoVotes + ' people voted for Option 2'}</p>
+								}
+								<p>{'This is ' + optionTwoPerc + '% of votes'}</p>
 								<Progress value={optionTwoPerc} color="info"/>
 							</div> : <p><b><em>Not yet voted</em></b></p>	
 						}
@@ -155,7 +165,9 @@ function mapStateToProps({ questions, users, authedUser }, {match}){
 		questionAuthorId,
 		userAnswer,
 		optionOnePerc,
-		optionTwoPerc
+		optionTwoPerc,
+		optionOneVotes,
+		optionTwoVotes
 	}
 }
 

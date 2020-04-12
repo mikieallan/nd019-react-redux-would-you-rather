@@ -8,7 +8,7 @@ class User extends Component {
 			<div>
 				<Fragment>
 					<span>{user.name}</span>
-					<img src={user.avatarURL} className="avatar"/>
+					<img src={user.avatarURL} className="avatar" alt="user avater"/>
 				</Fragment>
 			</div>
 		)

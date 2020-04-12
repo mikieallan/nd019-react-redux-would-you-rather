@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {
   Collapse,
   Navbar,
@@ -13,9 +13,10 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, Redirect, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import User from './User'
+
 
 class MyNav extends Component{
 	render() {
@@ -51,19 +52,6 @@ class MyNav extends Component{
 		      	</Nav>
 		      }
 		      </Navbar>
-
-		     
-
-		      {/*<Navbar>
-		      	<UncontrolledDropdown nav inNavbar>
-		              <DropdownToggle nav caret>Options</DropdownToggle>
-		              <DropdownMenu right>
-		                <DropdownItem>Option 1</DropdownItem>
-		                <DropdownItem divider />
-		                <DropdownItem>Option 2</DropdownItem>
-		              </DropdownMenu>
-		            </UncontrolledDropdown>
-		      </Navbar>*/}
 		    </div>
 		)
 	}

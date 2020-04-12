@@ -4,11 +4,6 @@ import { withRouter } from 'react-router-dom'
 import { Card, CardBody, CardTitle, ListGroup, ListGroupItem } from 'reactstrap'
 
 class Question extends Component {
-	/*constructor() {
-		super()
-		this.goToQuestionDetails = this.routeChange.bind(this);
-	}*/
-
 	goToQuestionDetails(e, questionId){
 		let path = `/questions/`+questionId
 		this.props.history.push(path)

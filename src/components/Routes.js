@@ -12,15 +12,16 @@ import Leaderboard from './Leaderboard'
 function Routes(props) {
 	return <div className="container">
 		<Switch>
-			{
-				props.notLoggedIn ? <Route path='/' exact component = {Login} /> :
+			 {
+			 	props.notLoggedIn ? <Login /> :
 					<Fragment>
 						<Route exact path='/' component={Dashboard} />
-						<Route exact path='/add' component={AddQuestion} />
-						<Route exact path='/logout' component={Logout} />
-						<Route exact path='/leaderboard' component={Leaderboard} />
+						<Route path='/add' component={AddQuestion} />
+						<Route path='/logout' component={Logout} />
+						<Route path='/leaderboard' component={Leaderboard} />
 						<Route path="/questions/:id" component={QuestionDetails} />
 					</Fragment>
+				
 			}
 			<Route component={NotFound} />
 		</Switch>
